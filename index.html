@@ -3,196 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox</title>
-    <style>
-        *{
-        margin: 0;
-        padding: 0;
-        }
+    <title>Boostrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="indexdb.js"> </script>
 
-        .contenedor-principal{
-        display: flex;
-        flex-wrap: wrap;
-        }
-        .logo {
-        width:7%;
-        background-color: #8282ff;
-        height: 50px;
-        text-align: center;
-        border-radius: 100px;
-        }
-        nav{
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        background-color: black;
-        flex-wrap: nowrap;
-        align-items: center;
-        color: rgb(201, 232, 250);
-        }
-        .menu {
-        width: 70%;
-        flex-direction: column;
-        }
-
-        ul {
-        margin: 10px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        }
-
-        li{
-        list-style: none;
-        }
-        figure {
-        width: 100%;
-        background-color: yellow;
-        height: 300px;
-        text-align: center;
-        }
-        main {
-        width: 100%;
-        }
-
-        section {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-                
-        }
-
-        article {
-        width: 200px;
-        height: 200px;
-        background-color: red;
-        padding:5px;
-        margin: 10px;
-        }
-
-        footer{
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        justify-content: center;
-        }
-
-        .caja{
-        background-color:pink;
-        width: 200px;
-        height: 40px;
-        text-align: center;
-        padding-top: 15px;
-        margin: 10px;
-        }
-        /* lista */
-        .estiloBoton{
-            border-radius: 15px;
-            background-color: tomato;
-            padding: 5px ;
-            width: 13%;
-            height:50px;
-            color: white;
-            border-style: none;
-            box-shadow: 1px 1px 1px #000;
-        }
-        .estiloInput {
-            border-radius: 15px;
-            width: 23%;
-            height:50px;
-            padding-left: 15px;
-            box-shadow: 1px 1px 1px #000;
-            border-style: none;
-        }
-        #listaTareas {
-            list-style: none;
-            padding:0;
-        }
-        .tarea {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 20px;
-        }
-        .def {
-            background-color: rgb(174, 208, 236);
-            height: 50vh;
-            margin: 10%;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-    </style>
 </head>
-<body>
-    <div class="contenedor-principal">
-        <nav>
-            <div class="logo">L</div>
-            <div class="menu">
-            <ul>
-                <li>Inicio</li>
-                <li>Sobre Nosotros</li>
-                <li>Contacto</li>
-                <li>Informacion</li>
+<body onload="devolver()">
+  
+    <!-- barra de navegacion -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <img src="im/logo.png" alt="logo" width="180" class="rounded mx-auto d-block">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">mas informacion</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  comentarios
+                </a>
+
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Blogs</a>
+              </li>
             </ul>
-            </div>
-        </nav>
-        
-        <figure>
-            <img src="https://www.questionpro.com/blog/wp-content/uploads/2020/06/Portada-tipos-de-datos-estadisticos.jpg" width="250" alt="datos">
-            <figcaption>Tu mejor Opcion</figcaption>
-            <br>
-            <input class="estiloInput" type="text" id="tarea" placeholder="Ingresar tarea"/>
-            <button class="estiloBoton" onclick="agregarTarea()">Agregar</button>
-            <ul id="listaTareas"> 
-            </ul>
-        </figure>
-        
-        <main>
-            <section>
-            <article>A</article>
-            <article>B</article>
-            <article>C</article>
-            <article>D</article>
-            <article>E</article>
-            <article>F</article>
-            <article>G</article>
-            <article>H</article>
-            <article>H</article>
-            <article>E</article>
-            <article>F</article>
-            <article>ultima accion</article>
-            </section>
-        </main>
-        
-        <footer>
-            <div class="caja">1</div>
-            <div class="caja">2</div>
-            <div class="caja">3</div>
-            <div class="caja">4</div>
-        </footer>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
         </div>
-        <script>
-            function agregarTarea() {
-                var inputTarea = document.getElementById("tarea");
-                var tareaValue = inputTarea.value.trim();
-                if (tareaValue != ""){
-                    var lista = document.getElementById("listaTareas");
-                    var nuevoElementoLI = document.createElement("li");
-                    nuevoElementoLI.innerHTML = `
-                        <div class="tarea">
-                                <span>${tareaValue}</span>
-                        </div>
-                    `
-                    lista.appendChild(nuevoElementoLI);
-                    inputTarea.value = "";
-                }
+    </nav>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <img src="im/iglesia-de-jesucristo-8.jpg" class="d-block w-100" width="700px" height="500px" alt="">
+          <h1 class="text-center">Tecnologias en internet</h1>
+        </div>
+        <div class="carousel-item">
+          <img src="im/images.jpg" class="d-block w-100" width="700px" height="500px" alt="">
+          <h2 class="text-center">Moises</h2>
+        </div>
+        <div class="carousel-item">
+          <img src="im/los.jpg" class="d-block w-100" width="700px" height="500px" alt="">
+          <h2 class="text-center">los 10 mandamientos</h2>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container" >
+      <h5>los Diez Mandamientos son un conjunto de principios éticos y morales que se encuentran en la Biblia, específicamente en el Antiguo Testamento. Estos mandamientos son considerados fundamentales en las tradiciones judías y cristianas. La versión más conocida de los Diez Mandamientos se encuentra en el libro del Éxodo, capítulo 20, y también se menciona en el libro de Deuteronomio, capítulo 5.</h5>
+    </div>
+    
+    <!-- anuncios -->
+    <div class=".container-xxl" >
+      <div class="row">
+        <div class="col-6"> 
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      <h6>MANDAMIENTO #1 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body" ><h4>No tendrás dioses ajenos delante de mí. </h4>
+                      <div class="callout">No adorarás a otros dioses aparte de Yahvé, el Dios único.</div>
+                      <img src="im/maxresdefault.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      <h6>MANDAMIENTO #2 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><h4>No te harás imagen, ni ninguna semejanza de lo que esté arriba en el cielo, ni abajo en la tierra, ni en las aguas debajo de la tierra.</h4>
+                      <div class="callout">No fabricarás ídolos o imágenes para adorar, ya que Dios es incomprensible y no puede ser reducido a una representación material.</div>
+                      <img src="im/bula-de-oro-como-simbolo-de-riqueza-y-exito-en-el-fondo-blanco-he512n.jpg" class="rounded mx-auto d-block" alt="..." width="350">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      <h6>MANDAMIENTO #3 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><h4>No tomarás el nombre de Jehová tu Dios en vano.</h4>
+                      <div class="callout">No usarás el nombre de Dios de manera irrespetuosa o falsa, como en juramentos vacíos o blasfemias.</div>
+                      <img src="im/3.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree4" aria-expanded="false" aria-controls="flush-collapseThree4">
+                      <h6>MANDAMIENTO #4 </h6>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body"><h4>Santificarás el día de reposo.</h4>
+                        <div class="callout"> Guardarás el sábado (séptimo día de la semana) como un día especial de descanso y adoración.</div>
+                        <img src="im/4.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                      </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree5" aria-expanded="false" aria-controls="flush-collapseThree5">
+                        <h6>MANDAMIENTO #5 </h6>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree5" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body"><h4> Honra a tu padre y a tu madre </h4>
+                        <div class="callout">Mostrarás respeto y obediencia hacia tus padres y aquellos que tienen autoridad sobre ti.</div>
+                        <img src="im/5.png" class="rounded mx-auto d-block" alt="..." width="550">
+                      </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree6" aria-expanded="false" aria-controls="flush-collapseThree4">
+                      <h6>MANDAMIENTO #6 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree6" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><h4>No matarás.</h4>
+                      <div class="callout">No quitarás la vida a otra persona de manera injusta.</div>
+                      <img src="im/6.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree7" aria-expanded="false" aria-controls="flush-collapseThree4">
+                      <h6>MANDAMIENTO #7 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree7" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><h4>No cometerás adulterio.</h4>
+                      <div class="callout">Mantendrás la fidelidad en el matrimonio y evitarás relaciones sexuales fuera de él.</div>
+                      <img src="im/7.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree8" aria-expanded="false" aria-controls="flush-collapseThree4">
+                      <h6>MANDAMIENTO #8 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree8" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><h4>No hurtarás.</h4>
+                      <div class="callout">No robarás ni tomarás posesiones ajenas sin permiso.</div>
+                      <img src="im/8.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree9" aria-expanded="false" aria-controls="flush-collapseThree4">
+                      <h6>MANDAMIENTO #9 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree9" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><h4>No dirás falso testimonio contra tu prójimo. </h4>
+                      <div class="callout">No mentirás ni darás falso testimonio en perjuicio de otra persona.</div>
+                      <img src="im/9.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree10" aria-expanded="false" aria-controls="flush-collapseThree4">
+                      <h6>MANDAMIENTO #10 </h6>
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree10" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body"><h4>No codiciarás la casa de tu prójimo, no codiciarás la mujer de tu prójimo, ni su siervo, ni su criada, ni su buey, ni su asno, ni cosa alguna de tu prójimo. </h4>
+                      <div class="callout">No desearás las posesiones de otras personas, ni buscarás obtenerlas de manera injusta.</div>
+                      <img src="im/10.jpg" class="rounded mx-auto d-block" alt="..." width="550">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+        </div>
+        <div class="col-6">
+            <img src="im/depositphotos_227450020-stock-photo-the-ten-commandments-3d-rendering.jpg" class="rounded mx-auto d-block" alt="..." width="750">
+            <div class="callout"><h5>Estos mandamientos, según la tradición religiosa, fueron entregados por Dios a Moisés en el Monte Sinaí y representan principios fundamentales para la vida ética y moral en las tradiciones judías y cristianas.</h5></div>
+        </div>
+    </div>
+    </div>
+    
+    <h2 class="text-center">para mas informacion </h2>
+    <div class="enlaces">
+      <div class="row">
+      <div class="col-4 p-1">
+        <div class="card">
+            <h5 class="card-header">la Biblia</h5>
+            <div class="card-body">
+              <img src="im/los 10m.png" class="rounded mx-auto d-block" alt="..." width="450">
+              <h5 class="card-title">La santa biblia</h5>
+              <p class="card-text">un enlace a la santa biblia del antiguo y nuevo testamento</p>
+              <a href="https://www.wordproject.org/bibles/sp/index.htm" class="btn btn-primary">has click aqui</a>
+            </div>
+          </div>
+      </div>
+      <div class="col-4 p-1">
+        <div class="card">
+            <h5 class="card-header">los 10 mandamientos</h5>
+            <div class="card-body">
+              <img src="im/biblia.jpg" class="rounded mx-auto d-block" alt="..." width="450">
+              <h5 class="card-title">Moises y los 10 mandamientos</h5>
+              <p class="card-text">Un enlace a un video con referencia a los 10 mandamientos.</p>
+              <a href="https://www.youtube.com/watch?v=RYppJPmIjnw" class="btn btn-primary">has click aqui</a>
+            </div>
+          </div>
+     </div>
+      <div class="col-4 p-1">
+        <div class="card">
+            <h5 class="card-header">la religion</h5>
+            <div class="card-body">
+              <img src="im/religion.jpeg" class="rounded mx-auto d-block" alt="..." width="450">
+              <h5 class="card-title">Religion y creencias</h5>
+              <p class="card-text">un enlace para conocer mas sobre la definicion de religion y las creencias.</p>
+              <a href="https://www.coe.int/es/web/compass/religion-and-belief" class="btn btn-primary">has click aqui</a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- comentarios -->
+
+    <div class="row p-3">
+      <div class="col-9">
+        <div class="input-group mb-3">
+          <div class="card" style="width:90%">
+              <div class="card-body">
+                <h5 class="card-title">Comentarios</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Todos los comentarios</h6>
+                <div class="row p-1">
+                  <div class="col-12">
+                    <ol class="list-group list-group-numbered" id="lista"></ol>
+                  </div>
+              </div>
+              <div class="input-group mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Ingrese su nombre: </label>
+                <input type="text" id="IdPersona" class="form-control" aria-label="IdPersona" aria-describedby="button-addon2">
+              </div>
+              <div class="input-group mb-2">
+                  <label for="exampleInputEmail1" class="form-label">Ingrese su comentario: </label>
+                  <input id="Nombre" type="text" class="form-control"  aria-label="Nombre" aria-describedby="button-addon2">
+              </div>
+              <div class="d-grid gap-2">
+                  <button class="btn btn-outline-primary" type="button" id="button-addon2" onclick="insertar()">Guardar</button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    
+    <!-- <div class="container text-center">
+        <div class="row">
+          <div class="col  col-lg-3 col-md-3 col-sm-12"> 
+            <button type="button" class="btn btn-primary">Primary</button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn btn-secondary">Secondary</button>
+          </div>
+          <div class="col"><button type="button" class="btn btn-success">Success</button></div>
+          <div class="col"><button type="button" class="btn btn-danger">Danger</button></div>
+        </div>
+        <div class="row">
+          <div class="col-8"><button type="button" class="btn btn-warning">Warning</button></div>
+          <div class="col-4"><button type="button" class="btn btn-info">Info</button></div>
+        </div>
+    </div> -->
+    <script>
+      const insertar = () => {
+          // recuperando los datos de los inputs
+          var _idPersona = document.getElementById('IdPersona').value;
+          var _nombre = document.getElementById('Nombre').value;
+          console.log(_idPersona);
+          console.log(_nombre);
+
+          // creando un objeto articulo 
+          var art = {IdPersona: _idPersona, nombre: _nombre};
+          var transaccion = db.transaction("persona", "readwrite");
+          const objeto = transaccion.objectStore('persona');
+          // insertar en el objeto
+          // const cargarInfo= objeto.add(informacion);
+          const cargarInfo = objeto.add(art);
+          if  (cargarInfo)
+              console.log("guardo con exito",cargarInfo);
+
+              devolver();
+      }
+      const devolver = ()=>{
+        // Lista de boostrapp visualizar
+        var lista = document.getElementById("lista");
+        lista.innerHTML ="";
+        console.log(lista);
+        db = dbConnection.result;
+        // lectura de tablas
+        var transaccion = db.transaction("persona", "readonly");
+        const objeto = transaccion.objectStore('persona');
+        console.log(objeto);
+        // iterar los elementos
+        const cursor = objeto.openCursor();
+        cursor.onsuccess = (e) =>{
+            const c = e.target.result;
+            if (c){
+                
+                // insertando en el html de UL, se realizo algunas concatenaciones adicionales
+                lista.innerHTML += "<li class='list-group-item'>"+c.value['IdPersona']+'--'+c.value['nombre']+" &nbsp; &nbsp; <button type='button' onclick='eliminar("+c.value['IdPersona']+")' class='btn btn-outline-danger '>Eliminar</button></li>"
+                c.continue();
+            } else {
+                console.log("no tiene datos");
             }
-        </script>
+        }
+    }
+    const eliminar = (clave) =>{ 
+        console.log(clave);
+        var transaccion = db.transaction("persona", "readwrite");
+        const objeto = transaccion.objectStore('persona');
+        console.log("test", objeto);
+        // insertar en el objeto
+        const eliminado = objeto.delete(clave);
+        eliminado.onsuccess = (test) => {
+          console.log(test);
+            // devolver();
+        }
+        eliminado.onerror = (error) => {
+            console.log(error);
+        }
+    }
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
