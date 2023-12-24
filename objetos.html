@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var gato = {
+            peso: "40kg",
+            edad: 5,
+            nombre: "garfield",
+            raza: "ninguno",
+            color: "naranja",
+            comer: function(){
+                return "Come cada 5 horas"
+            }
+        }
+
+        console.log(gato);
+        console.log(gato.comer());
+        document.write("<br/>");
+        document.write(gato.nombre);
+        document.write("<br/>");
+        document.write(gato.edad);
+        document.write("<br/>");
+        document.write(gato["color"]);
+        document.write("<br/>");
+        document.write(gato.comer());
+    </script>
+</head>
+<body>
+</body>
+</html>

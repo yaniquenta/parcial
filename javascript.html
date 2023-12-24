@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+        // var numero = 2;
+        // function miFuncion(){
+        //     let num = 19;
+        //     document.write(num);
+        // }
+        // document.write("<br>");
+        // document.write(numero);
+        // miFuncion();
+
+        // // Input 
+        // document.write("<br>");
+        // document.write("<h2 style='color: red'> Test</h2>");
+        // document.write("<br>");
+        // document.write(123+5);
+        // console.log("este es mi numero ",numero);
+        // // output
+        // document.write("<br>");
+        // var nombre = window.prompt("Ingrese su nombre");
+        // document.write("<h1>Mi nombre es: " + nombre + "</h1>");
+        // console.log("Mi nombre es: ", nombre);
+
+        // 1. Operadores Aritméticos
+        // var num1 = Number(window.prompt("Ingrese primer numero"));
+        // var num2 = Number(window.prompt("Ingrese segundo numero"));
+        // document.write("La suma es:" + (num1 + num2));
+        // document.write("<br>");
+        // document.write("La multiplicacion es:" + (num1 * num2));
+        // document.write("<br>");
+        // document.write("La division es:" + (num1 / num2));
+        // document.write("<br>");
+        // document.write("La resta es:" + (num1 - num2));
+        // document.write("<br>");
+        // document.write("El modulo es:" + (num1 % num2));
+
+        // 2. Operadores de comparacion
+        // ==
+        // !=
+        // > ; <
+        // >=   ; <=
+        var comp1 = 10;
+        var comp2 = 20;
+        document.write(comp1 == comp2);
+        document.write("<br>");
+        document.write(comp1 > comp2);
+        document.write("<br>");
+        document.write(comp1 < comp2);
+        document.write("<br>");
+        document.write(comp1 != comp2);
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<h3>3. Operadores lógicos o relacionales (AND y OR)</h3>");
+
+        // 3. Operadores lógicos o relacionales (AND y OR)
+        //AND
+        var a = 1; var b = 12 ; var c = 22; var d = 4;
+        document.write(( a < b ) && ( c > d));
+        console.log(( a < b ) && ( c > d));
+                    // V & V = V => true
+        // v & v = v
+        // v & f = f
+        // f & v = f
+        // f & f = f
+        document.write("<br>");document.write("<br>");
+        document.write(( a > b ) || ( c < d));
+        // F || F = F => fale
+        console.log(( a < b ) || ( c > d));
+        // v || v = v
+        // v || f = v
+        // f || v = v
+        // f || f = f
+        
+        const aconst = 20;
+        // aconst= 10;
+        console.log(aconst);
+
+        document.write("<h3>4. Operadores de asignacion</h3>");
+            /*  +=, -=, *=, /= */
+        var asignacion = 30;
+        asignacion *= 5;
+        document.write(asignacion);
+        document.write("<br>");
+        asignacion += 5;
+        document.write(asignacion);
+        document.write("<br>");
+        asignacion -= 5;
+        document.write(asignacion);
+        document.write("<br>");
+        asignacion /= 5;
+        document.write(asignacion);
+        document.write("<br>");
+        document.write("<h3>5. Operadores Condicionales</h3>");
+        var cond1 = 30;
+        var cond2 = 10;
+        var result = (cond1 > cond2) ? "Este numero es Verdadero" : "Este numero es Falso";
+        // 30 < 10 = F 
+        document.write(result);
+        document.write("<br>");
+        //CONDICIONALES
+        document.write("<h3>Condicionales IF, ELSE, SWITCH</h3>");
+        var nota = 90;
+        if (nota >= 70 && nota <= 80){
+            document.write("Esta aprobado");
+        } else if (nota > 80) {
+            document.write("Nota de aprobacion excelencia");
+        } else {
+            document.write("REPROBADO");
+        }
+        document.write("<br>");
+        //                                                                  F
+        var result2 = (nota >= 70 && nota <= 80) ? "Esta aprobado" : (nota > 80) ? "Nota de aprobacion excelencia": "REPROBADO";
+        document.write(result2);
+        document.write("<br>");
+        document.write("<h3>SWITCH</h3>");
+        // Escribir un programa JS para obtener un carácter del usuario para verificar si es vocal o consonante
+        var caracter = window.prompt("Ingrese Caracter");
+        switch(caracter) {
+            case 'a': 
+                document.write("Esta es vocal");
+                break;
+            case 'e': 
+                document.write("Esta es vocal");
+                break;
+            case 'i': 
+                document.write("Esta es vocal");
+                break;
+            case 'o': 
+                document.write("Esta es vocal");
+                break;
+            case 'u': 
+                document.write("Esta es vocal");
+                break;
+            default:
+                document.write("Es consonante");
+                break;
+        }
+        document.write("<br>");
+        document.write("<h3>BUCLES</h3>");
+            //  for (inicializacion ; condicion ; incremento o disminucion) {
+            // Declaración o conjunto de declaraciones
+            // }
+        document.write("<h5>for</h5>");
+        for ( let i = 10; i>= 1; i--) {
+            document.write( i + "<br>");
+        }
+        //iteracion para objetos
+        // for (key in object){}
+        document.write("<br>");
+        document.write("<h5>for IN</h5>");
+        var estudiante = {
+            nombre: "Andres",
+            apellido: "Colque",
+            celular: 123213,
+            direccion: "Av. Blanco Galindo"
+        };
+        document.write("<br>");
+        for (var est in estudiante) {
+            document.write(est + "<br/>");  
+            document.write(estudiante[est] + "<br/>");  
+        }
+        document.write("<br>");
+        document.write("<h5>for OF</h5>");
+        let colores = ["rojo","amarillo","verde","azul","celeste"];
+        for ( var c of colores){
+            document.write(c + "<br/>");  
+        }
+        document.write("<br>");
+        document.write("<h5>While</h5>");
+        var n = 10;
+        while (n >= 1) {
+            document.write(n + "<br>");
+            n--;
+        }
+        document.write("<br>");
+        document.write("<h5>Do While</h5>");
+        var m = 10;
+        do {
+            document.write(m + "<br>");
+            // console
+            m--;
+        } while(m >= 1)
+
+        document.write("<br>");
+        document.write("<h3>FUNCIONES</h3>");
+        function funcTest() {
+            document.write("Esta es una funcion");
+        }
+        funcTest();
+        document.write("<br>");
+        //Parametro y Argumento
+        function sumaNumeros(a, b, c) {
+            document.write(a + b + c);
+        }
+        sumaNumeros(2,3,5);
+        // argumeto y parametro
+    </script>
+    <script src="script.js"></script> <!-- Archivo externo JS -->
+</head>
+<body>
+    <h1>Test</h1>
+</body>
+</html>
+<script>
+    document.write("<h3>Hola Mundo 3</h3>");
+</script>
